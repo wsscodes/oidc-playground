@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script type="text/javascript" src="/client.js"></script>
+    <script type="text/javascript" src="../keycloak/keycloak.js"></script>
+    <script type="text/javascript" src="jsconsole.js"></script>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td><h1>keycloak Example js-console</h1></td>
+            <td><h3><a href="/" style="margin-left:100px;">回首页</a></h3> </td>
+        </tr>
+    </table>
+<div>
+    <button onclick="keycloak.login();">Login</button>
+    <button onclick="keycloak.login({ action: 'UPDATE_PASSWORD' })">Update Password</button>
+    <button onclick="keycloak.logout()">Logout</button>
+    <button onclick="keycloak.register()">Register</button>
+    <button onclick="keycloak.accountManagement()">Account</button>
+    <button onclick="refreshToken(9999)">Refresh Token</button>
+    <button onclick="refreshToken(30)">Refresh Token (if <30s validity)</button>
+    <button onclick="loadProfile()">Get Profile</button>
+    <button onclick="updateProfile()">Update profile</button>
+    <button onclick="loadUserInfo()">Get User Info</button>
+    <button onclick="output(keycloak.tokenParsed)">Show Token</button>
+    <button onclick="output(keycloak.refreshTokenParsed)">Show Refresh Token</button>
+    <button onclick="output(keycloak.idTokenParsed)">Show ID Token</button>
+    <button onclick="showExpires()">Show Expires</button>
+    <button onclick="output(keycloak)">Show Details</button>
+    <button onclick="output(keycloak.createLoginUrl())">Show Login URL</button>
+    <button onclick="output(keycloak.createLogoutUrl())">Show Logout URL</button>
+    <button onclick="output(keycloak.createRegisterUrl())">Show Register URL</button>
+    <button onclick="output(keycloak.createAccountUrl())">Show Account URL</button>
+
+</div>
+
+<h2>Result</h2>
+<pre style="background-color: #ddd; border: 1px solid #ccc; padding: 10px; word-wrap: break-word; white-space: pre-wrap;" id="output"></pre>
+
+<h2>Events</h2>
+<pre style="background-color: #ddd; border: 1px solid #ccc; padding: 10px; word-wrap: break-word; white-space: pre-wrap;" id="events"></pre>
+</body>
+</html>
